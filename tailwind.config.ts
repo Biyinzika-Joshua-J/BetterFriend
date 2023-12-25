@@ -10,6 +10,12 @@ const config = {
   ],
   prefix: "",
   theme: {
+    colors:{
+      primary : "#092635",
+      secondary : "#1B4242",
+      tertially : "#5C8374",
+      light : "#9EC8B9",
+    },
     container: {
       center: true,
       padding: "2rem",

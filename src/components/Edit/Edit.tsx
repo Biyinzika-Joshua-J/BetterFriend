@@ -26,7 +26,7 @@ export function Edit() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">
+        <Button variant="outline" className="z-10">
             <FontAwesomeIcon icon={faEllipsisVertical} size="2x"/>
         </Button>
       </DropdownMenuTrigger>

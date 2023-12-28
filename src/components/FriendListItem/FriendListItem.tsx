@@ -6,9 +6,9 @@ import Link from 'next/link'
 
 const FriendListItem = () => {
   return (
-    <Link href={"/dashbaord"}>
-    <div className='p-4 border-y-[1px] border-secondary'>
-        <div className="flex items-center justify-between">
+      <div className='p-4 border-y-[1px] border-secondary'>
+        <Link href={"/dashbaord"} className="flex items-center justify-between">
+       
            <div className="flex items-center">
            <div className="bg-[#ddd] p-2 rounded-full">
                 <FontAwesomeIcon icon={faUser} size='2x' className='text-primary'/>
@@ -18,15 +18,15 @@ const FriendListItem = () => {
                     Friend Name
                 </span>
             </div>
-           </div>
+         </div>
+      
 
            <div className="z-50">
             <Edit/>
            </div>
 
-        </div>
+        </Link>
     </div>
-    </Link>
   )
 }
 

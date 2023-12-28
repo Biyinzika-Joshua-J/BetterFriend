@@ -3,9 +3,11 @@ import SearchForm from '@/components/SearchForm/SearchForm'
 import { ButtonMain } from '@/components/Button/Button'
 import NoFriends from '@/components/NoFriends/NoFriends'
 import FriendListItem from '@/components/FriendListItem/FriendListItem'
+import Modal from '@/components/Modal/Modal'
 
 const page = () => {
   return (
+    <>
     <main className='py-10 max-w-6xl mx-auto'>
       <div className="flex flex-col">
         <div className="">
@@ -27,6 +29,12 @@ const page = () => {
         </div>
       </div>
     </main>
+    <Modal>
+      <div className="">
+        modal
+      </div>
+    </Modal>
+    </>
   )
 }
 

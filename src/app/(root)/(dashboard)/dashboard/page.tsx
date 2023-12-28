@@ -2,6 +2,7 @@ import React from 'react'
 import SearchForm from '@/components/SearchForm/SearchForm'
 import { ButtonMain } from '@/components/Button/Button'
 import NoFriends from '@/components/NoFriends/NoFriends'
+import FriendListItem from '@/components/FriendListItem/FriendListItem'
 
 const page = () => {
   return (
@@ -15,7 +16,10 @@ const page = () => {
         </div>
         <div className="">
           <div className="">
-            friends displayed here
+            <FriendListItem/>
+            <FriendListItem/>
+            <FriendListItem/>
+            <FriendListItem/>
           </div>
           {/*<div className="flex justify-center items-center h-44">
             <NoFriends/>

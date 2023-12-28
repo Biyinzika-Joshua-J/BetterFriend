@@ -21,6 +21,11 @@ const Navbar = () => {
                     <SignedIn>
                         <div className="flex flex-row items-center">
                             <div className="mr-2">
+                                <Link href={"/dashboard"}>
+                                    Dashbaord
+                                </Link>
+                            </div>
+                            <div className="mr-2">
                                 <Theme/>
                             </div>
                             <div className="ml-2">

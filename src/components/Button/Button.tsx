@@ -5,15 +5,16 @@ import Link from 'next/link';
 
 interface PropsMain {
     text : string;
+    classes?: string;
 }
 interface PropsLink {
     text : string;
     link : string;
 }
 
-export const ButtonMain = ({text}:PropsMain) => {
+export const ButtonMain = ({text, classes}:PropsMain) => {
   return (
-    <Button className="text-[#fff] bg-primary ease-in active:scale-90" variant={'default'}>
+    <Button className={`text-[#fff] bg-primary ease-in active:scale-90 ${classes}`} variant={'default'}>
         {text}
     </Button>
   )

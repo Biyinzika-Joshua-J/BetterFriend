@@ -1,9 +1,11 @@
 "use client"
-import React from 'react'
+import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const Modal = ({children}:{children:React.ReactNode}) => {
+  const [open, setOpen] = useState(false);
+  if (!open) return null;
   return (
     <div className="">
     <div className='fixed top-0 left-0 h-screen w-full bg-primary opacity-50 '>
@@ -13,7 +15,7 @@ const Modal = ({children}:{children:React.ReactNode}) => {
                 <div className="">
                 </div>
                 <div className="">
-                    <button>
+                    <button onClick={()=>setOpen(false)}>
                     <FontAwesomeIcon icon={faXmark} size='2x' className='text-primary'/>
                     </button>
                 </div>

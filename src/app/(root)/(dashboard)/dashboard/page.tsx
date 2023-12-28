@@ -4,6 +4,7 @@ import { ButtonMain } from '@/components/Button/Button'
 import NoFriends from '@/components/NoFriends/NoFriends'
 import FriendListItem from '@/components/FriendListItem/FriendListItem'
 import Modal from '@/components/Modal/Modal'
+import AdddFriendModalInput from '@/components/AddFriendModalInput/AdddFriendModalInput'
 
 const page = () => {
   return (
@@ -31,7 +32,7 @@ const page = () => {
     </main>
     <Modal>
       <div className="">
-        modal
+        <AdddFriendModalInput/>
       </div>
     </Modal>
     </>

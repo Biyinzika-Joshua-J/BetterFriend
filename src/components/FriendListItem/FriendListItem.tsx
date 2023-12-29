@@ -7,7 +7,7 @@ import Link from 'next/link'
 const FriendListItem = () => {
   return (
       <div className='p-4 border-y-[1px] border-secondary flex items-center justify-between'>
-        <Link href={"/dashbaord"} className="flex items-center justify-between">
+        <Link href={"/dashboard/friend-details/10"} className="flex items-center justify-between">
        
            <div className="flex items-center">
            <div className="bg-[#ddd] p-2 rounded-full">

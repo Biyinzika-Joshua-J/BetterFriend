@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+
+// schema.prisma
+
+model User {
+  id    Int  @id @default(autoincrement())
+  name  String
+  friends Friend[]
+}
+
+model Friend {
+  id     Int  @id @default(autoincrement())
+  name   String
+  userId Int
+  user   User    @relation(fields: [userId], references: [id])
+  entries Entry[]
+}
+
+model Entry {
+  id            Int  @id @default(autoincrement())
+  title         String
+  content       String
+  friendId      Int
+  friend        Friend      @relation(fields: [friendId], references: [id])
+  suggestion    Suggestion?
+}
+
+model Suggestion {
+  id            Int  @id @default(autoincrement())
+  entryId       Int @unique
+  entry         Entry       @relation(fields: [entryId], references: [id]) 
+  aiSuggestion String 
+}
+
+
+
+

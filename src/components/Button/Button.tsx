@@ -6,15 +6,16 @@ import Link from 'next/link';
 interface PropsMain {
     text : string;
     classes?: string;
+    onClick:()=>void;
 }
 interface PropsLink {
     text : string;
     link : string;
 }
 
-export const ButtonMain = ({text, classes}:PropsMain) => {
+export const ButtonMain = ({text, classes, onClick}:PropsMain) => {
   return (
-    <Button className={`text-[#fff] bg-primary ease-in active:scale-90 ${classes}`} variant={'default'}>
+    <Button onClick={()=>onClick()} className={`text-[#fff] bg-primary ease-in active:scale-90 ${classes}`} variant={'default'}>
         {text}
     </Button>
   )

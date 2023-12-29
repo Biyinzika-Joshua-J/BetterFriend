@@ -8,29 +8,22 @@ import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
   DropdownMenuItem
 } from "@/components/ui/dropdown-menu"
 
-type Checked = DropdownMenuCheckboxItemProps["checked"]
 
 export function Edit() {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
-  const [showPanel, setShowPanel] = React.useState<Checked>(false)
-
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="z-10">
-            <FontAwesomeIcon icon={faEllipsisVertical} size="2x"/>
+      <DropdownMenuTrigger asChild className="-z-50">
+        <Button variant="default" className="-z-50">
+            
+            <FontAwesomeIcon icon={faEllipsisVertical} size="2x" className="-z-50"/>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-20 z-30 bg-[#fff]">
+      <DropdownMenuContent className="w-20 z-50 bg-[#fff] opacity-100">
         <DropdownMenuItem
         >
             <button className="z-50">
@@ -45,7 +38,7 @@ export function Edit() {
         </DropdownMenuItem>
         <DropdownMenuItem
         >
-           <button >
+           <button>
                 Delete Friend
             </button>
         </DropdownMenuItem>

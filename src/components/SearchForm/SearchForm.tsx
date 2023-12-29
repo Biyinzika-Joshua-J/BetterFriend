@@ -10,7 +10,7 @@ const SearchForm = () => {
             <Input className='border-none  focus-visible:ring-0 outline-none ' type='text' placeholder='Search friends'/>
         </div>
         <div className="w-[10%]">
-            <ButtonMain classes='w-full' text='Search'/>
+            <ButtonMain onClick={()=>{}} classes='w-full' text='Search'/>
         </div>
     </div>
   )

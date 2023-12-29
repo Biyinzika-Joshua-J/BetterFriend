@@ -5,28 +5,29 @@ import NoFriends from '@/components/NoFriends/NoFriends'
 import FriendListItem from '@/components/FriendListItem/FriendListItem'
 import Modal from '@/components/Modal/Modal'
 import AdddFriendModalInput from '@/components/AddFriendModalInput/AdddFriendModalInput'
+import AddFriendButton from '@/components/AddFriemdButton/AddFriendButton'
 
 const page = () => {
+
   return (
     <>
     <main className='py-10 max-w-6xl mx-auto'>
-      <div className="flex flex-col">
+      <div className=" min-h-[100%] ">
         <div className="">
           <SearchForm/>
         </div>
         <div className="my-10">
-          <ButtonMain text='Add New Friend'/>
+          <AddFriendButton/>
         </div>
-        <div className="">
+        <div className="min-h-[50vh]">
           <div className="">
             <FriendListItem/>
             <FriendListItem/>
-            <FriendListItem/>
-            <FriendListItem/>
+           
           </div>
           {/*<div className="flex justify-center items-center h-44">
             <NoFriends/>
-  </div>*/}
+          </div>*/}
         </div>
       </div>
     </main>

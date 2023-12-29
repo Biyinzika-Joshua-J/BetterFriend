@@ -16,7 +16,7 @@ const NoFriends = () => {
                 <p>You have no friends</p>
             </div>
             <div className="pt-4">
-            <ButtonMain text='Add a Friend'/>
+            <ButtonMain onClick={()=>{}} text='Add a Friend'/>
             </div>
     </div>
   )

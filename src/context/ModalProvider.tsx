@@ -3,11 +3,11 @@ import React, { createContext, useContext, useState, } from "react";
 
 interface ModalContextType {
   open: boolean;
-  setModalOpen: (openStatus: boolean) => void;
-  setModalClose: (openStatus: boolean) => void;
+  setModalOpen: () => void;
+  setModalClose: () => void;
 }
 
-const ModalContext = createContext<ModalContextType | undefined>(undefined);
+export const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 export function ModalProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -16,7 +16,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
     setOpen(true);
   }
   function setModalClose(){
-    setOpen(true);
+    setOpen(false);
   }
 
   return (
@@ -26,7 +26,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useTheme() {
+export function useModal() {
   const context = useContext(ModalContext);
   if (context === undefined) {
     throw new Error("useTheme must be used within a ThemeProvider");

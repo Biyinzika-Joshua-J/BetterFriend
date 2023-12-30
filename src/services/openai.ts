@@ -1,7 +1,7 @@
 "use server"
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: "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" });
+const openai = new OpenAI({ apiKey: process.env.OPEN_API_KEY });
 
 export async function openAI() {
   const completion = await openai.chat.completions.create({

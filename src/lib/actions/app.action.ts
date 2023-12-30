@@ -121,6 +121,22 @@ export const deleteEntry = async (id: number) => {
   });
 };
 
+export const getEntries = async (friendId: number) => {
+    const friend = await prisma.friend.findUnique({
+      where: {
+        id: friendId,
+      },
+      include: {
+        entries: true,
+      },
+    });
+  
+    if (friend) {
+      return friend.entries;
+    }
+    throw new Error('Friend not found');
+  };
+
 // Search
 export const searchFriends = async (searchStr: string) => {
   return prisma.friend.findMany({

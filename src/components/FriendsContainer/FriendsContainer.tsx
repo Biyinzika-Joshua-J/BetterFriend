@@ -26,11 +26,11 @@ const FriendsContainer = () => {
   return (
     <div>
       {friends === null && "Loading...."}
-      {friends != null &&
-        friends.length > 0 &&
-        friends.map((friend: { id: number; name: string; userId: number }) => (
+      {(friends != null &&
+        friends.length > 0) ?
+       ( friends.map((friend: { id: number; name: string; userId: number }) => (
           <FriendListItem key={friend.id} id={friend.id} name={friend.name} />
-        ))}
+        ))):"No friends"}
     </div>
   );
 };

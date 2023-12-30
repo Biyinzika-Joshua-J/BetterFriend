@@ -2,12 +2,14 @@ import AddEntryButton from "@/components/AddEntryButton/AddEntryButton";
 import AddEntryModalInput from "@/components/AddEntryModalInput/AddEntryModalInput";
 import AddFriendButton from "@/components/AddFriendButton/AddFriendButton";
 import AdddFriendModalInput from "@/components/AddFriendModalInput/AdddFriendModalInput";
+import EntriesContainer from "@/components/EntriesContainer/EntriesContainer";
 import FriendListItem from "@/components/FriendListItem/FriendListItem";
 import Modal from "@/components/Modal/Modal";
 import SearchForm from "@/components/SearchForm/SearchForm";
 import React from "react";
 
-const page = () => {
+const page = ({params}:{params:any}) => {
+  const {id:friendId} = params;
   return (
     <>
       <main className="py-10 max-w-6xl mx-auto">
@@ -20,8 +22,7 @@ const page = () => {
           </div>
           <div className="min-h-[50vh]">
             <div className="">
-              <FriendListItem />
-              <FriendListItem />
+              <EntriesContainer friendId={friendId}/>
             </div>
             {/*<div className="flex justify-center items-center h-44">
             <NoFriends/>
@@ -31,7 +32,7 @@ const page = () => {
       </main>
       <Modal>
         <div className="">
-          <AddEntryModalInput />
+          <AddEntryModalInput friendId={friendId}/>
         </div>
       </Modal>
     </>

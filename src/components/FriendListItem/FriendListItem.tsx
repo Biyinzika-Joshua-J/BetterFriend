@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Edit } from '../Edit/Edit'
 import Link from 'next/link'
 
-const FriendListItem = () => {
+const FriendListItem = ({id, name} : {id:number, name:string}) => {
   return (
       <div className='p-4 border-y-[1px] border-secondary flex items-center justify-between'>
-        <Link href={"/dashboard/friend-details/10"} className="flex items-center justify-between">
+        <Link href={`/dashboard/friend-details/${id}`} className="flex items-center justify-between">
        
            <div className="flex items-center">
            <div className="bg-[#ddd] p-2 rounded-full">
@@ -15,7 +15,7 @@ const FriendListItem = () => {
             </div>
             <div className="ml-4">
                 <span className=''>
-                    Friend Name
+                    {name}
                 </span>
             </div>
          </div>

@@ -9,7 +9,7 @@ import {
 import { UserButton, SignedOut, SignedIn } from "@clerk/nextjs";
 import Theme from "../Theme/Theme";
 import Link from "next/link";
-import { getCurrentUser } from "@/lib/actions/app.action";
+import { getCurrentUser, createUser } from "@/lib/actions/app.action";
 
 
 const Navbar =  () => {
@@ -19,7 +19,8 @@ const Navbar =  () => {
             const user = await getCurrentUser();
             if (user){
                 const {username} = user;
-                
+                const userCreatedStatus = await createUser(username);
+               return userCreatedStatus;
             }
         }
        

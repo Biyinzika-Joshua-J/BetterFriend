@@ -6,6 +6,7 @@ import FriendListItem from "@/components/FriendListItem/FriendListItem";
 import Modal from "@/components/Modal/Modal";
 import AdddFriendModalInput from "@/components/AddFriendModalInput/AdddFriendModalInput";
 import AddFriendButton from "@/components/AddFriendButton/AddFriendButton";
+import FriendsContainer from "@/components/FriendsContainer/FriendsContainer";
 
 const page = () => {
   return (
@@ -20,8 +21,7 @@ const page = () => {
           </div>
           <div className="min-h-[50vh]">
             <div className="">
-              <FriendListItem />
-              <FriendListItem />
+              <FriendsContainer/>
             </div>
             {/*<div className="flex justify-center items-center h-44">
             <NoFriends/>

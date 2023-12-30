@@ -1,6 +1,8 @@
 "use server";
 import { currentUser } from "@clerk/nextjs";
-import { PrismaClient as prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export const getCurrentUser = async () => {
   const { username } = await currentUser();
@@ -8,11 +10,11 @@ export const getCurrentUser = async () => {
   return null;
 };
 export const createUser = async (name: string) => {
-  const existingUser = await prisma.user.findUnique({
-    where: {
-      name,
-    },
-  });
+    const existingUser = await prisma.user.findFirst({
+        where: {
+          name,
+        },
+      });
 
   if (existingUser) {
    return "User already exists";
@@ -23,6 +25,24 @@ export const createUser = async (name: string) => {
     },
   });
 };
+
+export const getCurrentUserId = async (name: string) => {
+    const user = await prisma.user.findFirst({
+      where: {
+        name,
+      },
+      select: {
+        id: true,
+      },
+    });
+  
+    if (user) {
+      return user.id;
+    }
+  
+    
+    throw new Error('User not found');
+  };
 
 export const deleteUser = async (id: number) => {
   return prisma.user.delete({
@@ -52,6 +72,23 @@ export const addFriend = async (name: string, userId: number) => {
     },
   });
 };
+export const getFriends = async (userId: number) => {
+    const user = await prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+      include: {
+        friends: true,
+      },
+    });
+  
+    if (user) {
+      return user.friends;
+    }
+  
+    throw new Error('User not found');
+  };
+
 
 export const deleteFriend = async (id: number) => {
   return prisma.friend.delete({

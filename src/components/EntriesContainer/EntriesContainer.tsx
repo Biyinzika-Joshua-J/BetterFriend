@@ -6,6 +6,7 @@ import {
 } from "@/lib/actions/app.action";
 import FriendListItem from "../FriendListItem/FriendListItem";
 import EntryListItem from "../EntryListItem/EntryListItem";
+import { openAI } from "@/services/openai";
 
 const EntriesContainer = ({friendId}:{friendId:string}) => {
   const [entries, setEntries] = useState<any | null>(null);
@@ -23,6 +24,7 @@ const EntriesContainer = ({friendId}:{friendId:string}) => {
 
   return (
     <div>
+        <button onClick={()=>openAI()}>fetch</button>
         {entries === null && "Loading...."}
       {(entries != null &&
         entries.length > 0) ?
